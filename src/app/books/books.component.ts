@@ -695,7 +695,7 @@ export class BooksComponent implements OnInit {
   }
 
   getImageUrl(imageName: string): string {
-    return `assets/images/${imageName}`;
+    return `assets/${imageName}`;
   }
 
   loadMore() {
@@ -726,5 +726,6 @@ export class BooksComponent implements OnInit {
 
   reset(): void {
     this.books = this.booksCopy;
+    this.searchForm.reset();
   }
 }
