@@ -12,7 +12,12 @@ export class AppComponent {
   title = 'lms';
   isLoggedInObsLocal$ = this.authService.isLoggedInObs$;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (localStorage.getItem('loggedInStatus') === 'true') {
+      this.authService.isLoggedIn$.next(true);
+    }
+  }
+
 
   logout(): void {
     localStorage.setItem('loggedInStatus', 'false');
