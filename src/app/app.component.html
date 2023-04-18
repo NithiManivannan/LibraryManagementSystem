@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="pl-15 navbar-brand" href="#"> Library Management System </a>
+
+    <button class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto" [hidden]="!(isLoggedInObsLocal$ | async)">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home"> HOME </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about"> ABOUT </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="books"> BOOKS </a>
+        </li>
+      </ul>
+      <button
+        class="btn btn-danger logout-btn"
+        (click)="logout()"
+        *ngIf="isLoggedInObsLocal$ | async"
+      >
+        LOGOUT
+      </button>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>

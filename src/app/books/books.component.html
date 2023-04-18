@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="search-container">
+    <h2>SEARCH BY:</h2>
+    <form [formGroup]="searchForm">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="author">Author</label>
+            <select class="form-control" formControlName="author">
+              <option [ngValue]=""></option>
+              <option *ngFor="let author of authors" [ngValue]="author">
+                {{ author }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="year">Year</label>
+            <select class="form-control" formControlName="year">
+              <option [ngValue]=""></option>
+              <option *ngFor="let year of years" [ngValue]="year">
+                {{ year }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="author">Title</label>
+            <select class="form-control" formControlName="bookTitle">
+              <option [ngValue]=""></option>
+              <option *ngFor="let title of titles" [ngValue]="title">
+                {{ title }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-lg btn-primary m-10" (click)="search()">
+        <span>Search</span>
+      </button>
+      <button class="btn btn-lg btn-danger m-10 ml-10" (click)="reset()">
+        <span>Reset</span>
+      </button>
+    </form>
+  </div>
+  <div class="row">
+    <div
+      class="col-4 book"
+      *ngFor="let book of books | slice : 0 : visibleCount"
+    >
+      <div class="box">
+        <div class="card" style="width: 18rem">
+          <img [src]="getImageUrl(book.image)" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">{{ book.productName }}</h5>
+            <p class="card-text">
+              {{ book.description }}
+            </p>
+
+            <div class="icons card-footer">
+              <span> <i class="fas fa-calendar"></i> {{ book.author }} </span>
+              <span> <i class="fas fa-user"></i> {{ book.year }} </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <span
+        (click)="loadMore()"
+        *ngIf="visibleCount < books.length"
+        style="font-weight: bold; font-size: 30px; cursor: pointer"
+        >Load More +</span
+      >
+    </div>
+  </div>
+</div>

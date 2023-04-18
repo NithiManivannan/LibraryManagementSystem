@@ -1,0 +1,148 @@
+.book {
+  margin-top: 3em;
+  margin-bottom: 2rem;
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 400px; /* adjust the width to match the aspect ratio of the image */
+    border-radius: 3em;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: translateY(
+          -5px
+        ); /* adjust the amount of translation to your liking */
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover; /* make the image fit in the container */
+        transition: transform 0.2s ease-in-out; /* add transition effect to the image */
+      }
+
+      &:hover img {
+        transform: scale(1.1); /* increase the size of the image on hovering */
+      }
+
+      .card-body {
+        flex: 1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .card-title {
+          font-size: 1.5rem;
+        }
+
+        .card-text {
+          font-size: 0.7rem;
+          flex: 1;
+        }
+
+        .icons {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1.2rem;
+          margin-top: auto;
+        }
+      }
+    }
+  }
+}
+
+form {
+  max-width: 600px;
+
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0px 0px 15px rgba(0, 0, 255, 0.3);
+}
+
+option {
+  text-transform: uppercase;
+}
+
+/* Neon effect */
+select.neon {
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+select.neon:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+select.neon:focus {
+  box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.3),
+    0px 0px 40px rgba(0, 0, 255, 0.3);
+}
+
+select.neon option {
+  background-color: #ffffff;
+  color: #333333;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+select.neon:focus option {
+  background-color: #0000ff;
+  color: #ffffff;
+  text-shadow: 0px 0px 20px rgba(0, 0, 255, 0.3);
+}
+
+h2 {
+  padding-left: 17em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
