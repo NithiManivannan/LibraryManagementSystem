@@ -695,7 +695,7 @@ export class BooksComponent implements OnInit {
   }
 
   getImageUrl(imageName: string): string {
-    return `assets/${imageName}`;
+    return `assets/images/${imageName}`;
   }
 
   loadMore() {
